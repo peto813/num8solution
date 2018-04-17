@@ -1,20 +1,40 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container main-content" style="margin:0 auto;max-width: 600px;">
+  
+  <form #dateForm="ngForm" name="dateForm" role="form" class="text-center">
+    <div class="form-group">
+      <label>Start date</label>
+        <input class="form-control" placeholder="mm/dd/yyyy"
+              name="startDate" [(ngModel)]="model.startDate"  ngbDatepicker #startDate="ngbDatepicker" required>
 
+    </div>
+
+    <div class="form-group">
+      <label>Number of days</label>
+        <input [(ngModel)]="model.numberDays"  #numberDays="ngModel" class="form-control" type="number" min="1" placeholder="Number of days" name="numberDays" required>
+    </div>
+
+    <div class="form-group">
+      <label>Country Code</label>
+      <input #countryCode="ngModel" [(ngModel)]="model.countryCode"  class="form-control" type="text" placeholder="Country code"  name="countryCode" required>
+    </div>
+
+  </form>
+
+
+
+<ng-template #t let-date="date" let-currentMonth="currentMonth" let-selected="selected" let-disabled="disabled" let-focused="focused">
+  <span class="custom-day" [class.hidden]="date.month !== currentMonth||disabled" [class.weekend]="isWeekend(date)" 
+        [class.orange]="holyday(date)&&!disabled"><!-- [class.text-muted]="disabled" -->
+    {{ date.day }}
+  </span><br>
+</ng-template><br>
+
+<h4 class="text-center" *ngIf="dateForm.valid&&dateForm.dirty">This form is valid.</h4>
+
+<hr/>
+</div>
+
+  <ngb-datepicker  container="body" (ngModelChange)="model.numberDays=undefined" outsideDays="visible" [displayMonths]="monthDiff()" navigation="none"  [dayTemplate]="t" [maxDate]="addDays()" [minDate]="PminDate" firstDayOfWeek="7" #startDate [ngModel]="model.startDate" (navigate)="date = $event.next">
+    
+
+  </ngb-datepicker>

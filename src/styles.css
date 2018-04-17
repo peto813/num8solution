@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~css/bootstrap.min.css';
+.ngb-dp-weekday{
+	color: black!important;
+	font-weight: bold!important;
+	font-style: normal!important;
+}
+
+div.ngb-dp-day.hidden{
+	border-right: 0.03em solid white!important;
+	border-left: 0.03em solid white!important;
+	border-bottom: 0.1em solid white!important;
+	background-color: #CBCBCB!important;
+	      text-align: center!important;
+	      padding: 0.185rem 0.25rem;
+	      display: inline-block!important;
+	      width: 2rem;
+}
+
+.ngb-dp-weekdays{
+	background-color: white!important;
+}
+
+
+.ngb-dp-month-name{
+	background-color: #F0F8DF!important;
+}
+
+
+body, input{
+	text-align: center;
+}
+body{
+	overflow: auto;
+}

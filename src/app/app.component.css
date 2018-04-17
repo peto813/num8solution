@@ -1,0 +1,27 @@
+.main-content{
+	padding-top: 80px;
+}
+
+	    .custom-day {      
+	      text-align: center;
+	      padding: 0.185rem 0.25rem;
+	      display: inline-block;
+	      width: 2rem;
+	      background-color: #c5d6b4;
+	      border-right: 0.03em solid white;
+	      border-left: 0.03em solid white;
+	    }
+
+	    .weekend {
+	      background-color: #fdfd30;
+	    }
+	    .hidden {
+	       color: transparent;
+	       background-color: #CCCCCC;
+	    }
+	    .orange{
+	    	background-color:#ED7F0D;
+	    }
+	    .text-muted{
+	    	background-color: #CCCCCC;
+	    }
