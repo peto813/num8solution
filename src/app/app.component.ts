@@ -72,6 +72,7 @@ export class I18n {
 	export class AppComponent extends NgbDatepickerI18n{
 	//used for start date validation
 	datePattern = '~(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d~';
+	date;
 	constructor(private _i18n: I18n, dateFormatter:NgbDateParserFormatter) {
 		super();
 	}
