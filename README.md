@@ -1,5 +1,9 @@
 # Time taken to complete tasks:
 
+All Work done in Angular 4/6, and angular boostrap.
+
+# Time taken to complete tasks:
+
 3 hours and 43 minutes
 
 ## Requirements status
